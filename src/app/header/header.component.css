@@ -1,0 +1,26 @@
+#navbar {
+    border: 2.4px solid rgb(123, 221, 180);
+    border-top: none;
+}
+
+#storeImg {
+    width: 120px;
+    margin-right: 40px;
+}
+
+#cartImg {
+    width: 50px;
+}
+
+#eagleImg {
+    width: 80px;
+}
+
+p {
+    margin: 20px;
+    font: 30px bold;
+}
+
+#home {
+    margin-left: 15px;
+}
