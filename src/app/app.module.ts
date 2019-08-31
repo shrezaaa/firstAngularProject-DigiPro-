@@ -7,6 +7,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HeaderComponent,
     CustomerComponent,
     ProductListComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
