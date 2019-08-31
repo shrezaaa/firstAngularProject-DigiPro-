@@ -7,6 +7,9 @@ import { Product } from 'src/Shared/products.model';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+
+  
+
   products : Product[] = [
     new Product('nikon' , 'assets/camera1.jpeg' , 'The best one  yet' ,['Good camera' , 'you have to provide a lenz']),
     new Product('sony' , 'assets/camera2.jpeg' , 'Medium' , ['it was not bad' , 'like it' , 'sony is a good brand']),
