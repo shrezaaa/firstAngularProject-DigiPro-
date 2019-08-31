@@ -1,5 +1,11 @@
-    <div class="row">
-        <div class="col-sm d-flex justify-content-center" *ngFor="let product of products; let i = index" singleProduct= "product">
-            <a href="#"><img [src] = "product.imgUrl"></a>
+<div class="row">
+    <div class="col-sm d-flex justify-content-center" *ngFor="let product of products; let i = index">
+        <div>
+            <a href="#">
+                <img [src]="product.imgUrl">
+            </a>
+            <br>
+            <p>{{ product.name }}</p>
         </div>
     </div>
+</div>
