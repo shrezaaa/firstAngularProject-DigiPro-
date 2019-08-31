@@ -1,7 +1,10 @@
 .col-sm {
+    width: 200px;
     border: 1px solid black;
 }
 
-.col-sm {
-    width: 200px;
+.row {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
 }

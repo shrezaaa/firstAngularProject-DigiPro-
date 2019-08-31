@@ -1,0 +1,34 @@
+#mainRow {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 15px;
+}
+
+#contactUsHeader {
+    padding-bottom: 30px;
+}
+
+#contactUsRow {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+h1 {
+    font: 30px bold;
+}
+
+.jumbotron {
+    background: #358CCE;
+    color: #FFF;
+    border-radius: 10px;
+}
+
+.jumbotron-sm {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+#aboutUsImg {
+    width: 650px;
+    height: 250px;
+}
