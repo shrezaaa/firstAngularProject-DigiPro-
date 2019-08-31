@@ -1,11 +1,16 @@
-.row {
+#mainRow {
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 15px;
 }
 
 #contactUsHeader {
-    margin-bottom: 10x;
+    padding-bottom: 30px;
+}
+
+#contactUsRow {
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
 h1 {
@@ -21,4 +26,9 @@ h1 {
 .jumbotron-sm {
     padding-top: 24px;
     padding-bottom: 24px;
+}
+
+#aboutUsImg {
+    width: 650px;
+    height: 250px;
 }
