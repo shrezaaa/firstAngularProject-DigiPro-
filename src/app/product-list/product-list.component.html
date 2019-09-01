@@ -11,12 +11,10 @@
 </div> -->
 <div class="grid-container">
     <div class="grid-items" *ngFor="let product of products;">
-        <div>
-            <a href="#">
+            <a href="#" id="nameTag">
                 <img [src]="product.imgUrl">
+                <br>
+                <span>{{ product.name }}</span>
             </a>
-            <br>
-            <p>{{ product.name }}</p>
-        </div>
     </div>
 </div>
