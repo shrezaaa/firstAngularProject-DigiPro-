@@ -25,6 +25,10 @@ export class SignUpCustomerComponent implements OnInit {
     })
   }
 
+  setColor(){
+    return this.signUpForm.status === "VALID" ? "green" : "red";
+  }
+
   onsubmit(){
     let customer = new Customer(this.signUpForm.get('fname').value,this.signUpForm.get('lname').value,this.signUpForm.get('username').value,
     this.signUpForm.get('password').value,[],[],false);

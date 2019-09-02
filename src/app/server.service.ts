@@ -14,10 +14,5 @@ export class ServerService {
 
     onRegister(cust : Customer){
         this.customers.push(cust);
-        
-        for(let i = 0; i < this.customers.length ; i++){
-            console.log(this.customers.length);
-        }
-        
     }
 }

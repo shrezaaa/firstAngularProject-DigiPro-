@@ -7,7 +7,7 @@
                     <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname" formControlName="fname">
                     <span class="help-block" *ngIf="!signUpForm.get('lname').valid && signUpForm.get('lname').touched">
                         <br>
-                        Please enter your Last Name!
+                        Please enter your First Name!
                     </span>
                 </div>
                 <div class="form-group">
@@ -37,7 +37,7 @@
                 <button class="btn btn-success" type="submit">Sign Up</button>
                 <br>
                 <br>
-                <P>{{ Message }}</P>
+                <P [ngStyle]="{color: setColor()}">{{ Message }}</P>
             </form>
         </div>
     </div>
