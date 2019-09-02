@@ -5,7 +5,7 @@ import { Customer } from 'src/Shared/customer.model';
 @Injectable()
 export class ServerService {
 
-    constructor(private http: Http , private cust : Customer){
+    constructor(private http: Http){
     }
 
     onRegister(cust : Customer){

@@ -10,6 +10,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignUpCustomerComponent } from './customer/sign-up-customer/sign-up-customer.component';
+import { ServerService } from './server.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,12 @@ import { SignUpCustomerComponent } from './customer/sign-up-customer/sign-up-cus
     SignUpCustomerComponent
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
