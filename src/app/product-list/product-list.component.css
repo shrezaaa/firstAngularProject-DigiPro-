@@ -56,3 +56,8 @@
         font: 28px bold black;
         margin-left:20px;
     }
+
+    #Price{
+        font-size: 25px;
+        color: red;
+    }
