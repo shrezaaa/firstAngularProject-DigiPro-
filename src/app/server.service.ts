@@ -8,8 +8,11 @@ export class ServerService {
     constructor(private http: Http){
     }
 
+    customers : Customer[] = [
+        new Customer()
+    ];
+
     onRegister(cust : Customer){
-        this.http.post('https://digiproproject.firebaseio.com/data.json',cust);
+
     }
- 
 }

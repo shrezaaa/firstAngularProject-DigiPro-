@@ -7,4 +7,16 @@ export class Customer{
     public likedPro: number[];
     public addedPro: number[];
     public isSignin: boolean = false;
+
+    constructor(fname : string , lname : string , Username : string , Password : string , LikedPro : number[] , AddedPro : number[] , IsSignIn : boolean){
+
+        this.Fname = fname;
+        this.Lname = lname;
+        this.username = Username;
+        this.password = Password;
+        this.likedPro = LikedPro;
+        this.addedPro = AddedPro;
+        this.isSignin = IsSignIn;
+
+    }
 }
