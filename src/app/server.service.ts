@@ -8,8 +8,11 @@ export class ServerService {
     constructor(private http: Http){
     }
 
+    customers : Customer[] = [
+        new Customer('Alirez','Ebrahimkhani','Alireza','1234',[],[],false)
+    ];
+
     onRegister(cust : Customer){
-        this.http.post('https://digiproproject.firebaseio.com/data.json',cust);
+        this.customers.push(cust);
     }
- 
 }

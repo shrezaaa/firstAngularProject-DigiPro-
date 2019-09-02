@@ -4,25 +4,40 @@
             <form [formGroup]="signUpForm" (ngSubmit)="onsubmit()">
                 <div class="form-group">
                     <label class="control-label" for="fname">First Name:</label>
-                    <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname"
-                        formControlName="fname">
+                    <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="fname" formControlName="fname">
+                    <span class="help-block" *ngIf="!signUpForm.get('lname').valid && signUpForm.get('lname').touched">
+                        <br>
+                        Please enter your First Name!
+                    </span>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="lname">Last Name:</label>
-                    <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname"
-                        formControlName="lname">
+                    <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="lname" formControlName="lname">
+                    <span class="help-block" *ngIf="!signUpForm.get('lname').valid && signUpForm.get('lname').touched">
+                        <br>
+                        Please enter your Last Name!
+                    </span>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username"
-                        formControlName="username">
+                    <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" formControlName="username">
+                    <span class="help-block" *ngIf="!signUpForm.get('username').valid && signUpForm.get('username').touched">
+                        <br>
+                        Please enter your Username!
+                    </span>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter Password"
-                        name="password" formControlName="password">
+                    <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password" formControlName="password">
+                    <span class="help-block" *ngIf="!signUpForm.get('password').valid && signUpForm.get('password').touched">
+                        <br>
+                        Please enter your Password!
+                    </span>
                 </div>
                 <button class="btn btn-success" type="submit">Sign Up</button>
+                <br>
+                <br>
+                <P [ngStyle]="{color: setColor()}">{{ Message }}</P>
             </form>
         </div>
     </div>

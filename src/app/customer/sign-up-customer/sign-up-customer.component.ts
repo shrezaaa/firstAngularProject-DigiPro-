@@ -12,26 +12,34 @@ export class SignUpCustomerComponent implements OnInit {
 
   signUpForm : FormGroup;
 
+  Message : string;
+
   constructor(private srvService: ServerService ) { }
 
   ngOnInit() {
     this.signUpForm = new FormGroup({
-      'fname': new FormControl(null),
-      'lname': new FormControl(null),
+      'fname': new FormControl(null, Validators.required),
+      'lname': new FormControl(null, Validators.required),
       'username': new FormControl(null , Validators.required),
       'password': new FormControl(null , Validators.required)
     })
   }
 
+  setColor(){
+    return this.signUpForm.status === "VALID" ? "green" : "red";
+  }
+
   onsubmit(){
-    
-    let customer = new Customer();
-    customer.Fname = this.signUpForm.get('fname').value;
-    customer.Lname = this.signUpForm.get('lname').value;
-    customer.username = this.signUpForm.get('username').value;
-    customer.password = this.signUpForm.get('password').value;
-    this.srvService.onRegister(customer);
-    
+    let customer = new Customer(this.signUpForm.get('fname').value,this.signUpForm.get('lname').value,this.signUpForm.get('username').value,
+    this.signUpForm.get('password').value,[],[],false);
+  
+    if(this.signUpForm.status === 'VALID')
+      {
+        this.srvService.onRegister(customer);
+        this.Message = 'Sign Up Successfully ...!  >_-';
+      }else{
+        this.Message = 'Fill out all of the inputs ...!'
+      }
   }
 
 
