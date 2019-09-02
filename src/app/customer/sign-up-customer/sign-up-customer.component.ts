@@ -12,7 +12,7 @@ export class SignUpCustomerComponent implements OnInit {
 
   signUpForm : FormGroup;
 
-  constructor(private srvService: ServerService  , private customer : Customer ) { }
+  constructor(private srvService: ServerService ) { }
 
   ngOnInit() {
     this.signUpForm = new FormGroup({
@@ -24,11 +24,13 @@ export class SignUpCustomerComponent implements OnInit {
   }
 
   onsubmit(){
-    this.customer.Fname = this.signUpForm.get('fname').value;
-    this.customer.Lname = this.signUpForm.get('lname').value;
-    this.customer.username = this.signUpForm.get('username').value;
-    this.customer.password = this.signUpForm.get('password').value;
-    this.srvService.onRegister(this.customer);
+    
+    let customer = new Customer();
+    customer.Fname = this.signUpForm.get('fname').value;
+    customer.Lname = this.signUpForm.get('lname').value;
+    customer.username = this.signUpForm.get('username').value;
+    customer.password = this.signUpForm.get('password').value;
+    this.srvService.onRegister(customer);
     
   }
 
