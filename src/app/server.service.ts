@@ -9,10 +9,15 @@ export class ServerService {
     }
 
     customers : Customer[] = [
-        new Customer()
+        new Customer('Alirez','Ebrahimkhani','Alireza','1234',[],[],false)
     ];
 
     onRegister(cust : Customer){
-
+        this.customers.push(cust);
+        
+        for(let i = 0; i < this.customers.length ; i++){
+            console.log(this.customers.length);
+        }
+        
     }
 }
