@@ -1,13 +1,22 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm d-flex justify-content-center" *ngFor="let product of products; let i = index" singleProduct= "product">
-            <a href="#"><img [src] = "product.imgUrl"></a>
+<div class="grid-container">
+    <div class="grid-items" *ngFor="let product of products;">
+        <a href="#" id="nameTag">
+            <img [src]="product.imgUrl">
+            <br>
+            <span>{{ product.name }}</span>
+        </a>
+        <div class="text-right">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <a  class="fa fa-star checked" href="#"></a>
+                <a  class="fa fa-star checked" href="#"></a>
+                <a  class="fa fa-star checked" href="#"></a>
+                <a  class="fa fa-star checked" href="#"></a>
+                <a  class="fa fa-star checked" href="#"></a>
+            <a><img id="cartPlus" src="assets\cart-plus.png"></a>
         </div>
-        <div class="col-sm d-flex justify-content-center">
-            <a href="#"><img src="assets/camera2.jpeg"></a>
-        </div>
-        <div class="col-sm d-flex justify-content-center">
-            <a href="#"><img src="assets/camera3.jpeg"></a>
+        <br>
+        <div class="text-left">
+            <span id="ProPrice">{{ product.price }} <span id="Price">$</span></span>
         </div>
     </div>
 </div>
