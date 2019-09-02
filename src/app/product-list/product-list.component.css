@@ -1,10 +1,58 @@
-.col-sm {
-    width: 200px;
-    border: 1px solid black;
-}
 
 .row {
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 20px;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: white;
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 20px
+    
+    
+  }
+
+  .grid-items{
+      text-align: center;
+      padding-top: 20px;
+      border: 1px groove #ebebeb;
+      padding-bottom: 10px;
+    }
+
+    #nameTag{
+        margin-top: 30px;
+        margin-bottom: 10px; 
+        font-style: italic;
+        font-size: 25px;
+        color: black;
+        text-decoration: none;
+        
+    }
+
+    img{
+        width: 250px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    
+    #cartPlus{
+       width: 40px;
+       height: 40px;
+       margin-right: 20px;
+       margin-left: 280px;
+       cursor: pointer;
+    }
+
+    .checked{
+        color: orange;
+        text-decoration: none;
+    }
+
+    #ProPrice{
+        font: 28px bold black;
+        margin-left:20px;
+    }
