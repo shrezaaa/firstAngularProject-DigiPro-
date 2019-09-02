@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ServerService } from 'src/app/server.service';
+import { Customer } from 'src/Shared/customer.model';
 
 @Component({
   selector: 'app-sign-up-customer',
@@ -10,7 +12,7 @@ export class SignUpCustomerComponent implements OnInit {
 
   signUpForm : FormGroup;
 
-  constructor() { }
+  constructor(private srvService: ServerService  , private customer : Customer ) { }
 
   ngOnInit() {
     this.signUpForm = new FormGroup({
@@ -20,9 +22,14 @@ export class SignUpCustomerComponent implements OnInit {
       'password': new FormControl(null , Validators.required)
     })
   }
-  
+
   onsubmit(){
-    console.log(44555);
+    this.customer.Fname = this.signUpForm.get('fname').value;
+    this.customer.Lname = this.signUpForm.get('lname').value;
+    this.customer.username = this.signUpForm.get('username').value;
+    this.customer.password = this.signUpForm.get('password').value;
+    this.srvService.onRegister(this.customer);
+    
   }
 
 
