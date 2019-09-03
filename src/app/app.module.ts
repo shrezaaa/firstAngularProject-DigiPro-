@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from '@angular/material/button';
+import { AngularFireModule } from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database'
 
 
 import { AppComponent } from './app.component';
@@ -12,11 +14,12 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { SignUpCustomerComponent } from './customer/sign-up-customer/sign-up-customer.component';
-import { ServerService } from './server.service';
+import { authService } from './Auth.service';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignInCustomerComponent } from './customer/sign-in-customer/sign-in-customer.component';
 import { ProfileComponent } from './customer/profile/profile.component';
+import { environment } from '../environments/environment'
 import {
   MatTreeModule,
   MatAutocompleteModule,
@@ -56,6 +59,8 @@ import { CdkTableModule } from "@angular/cdk/table";
 import { BidiModule } from "@angular/cdk/bidi";
 ​
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { ProductService } from './product.service';
+import { from } from 'rxjs';
 
 
 
@@ -73,6 +78,8 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 
   ],
   imports: [
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
     HttpModule,
     BrowserModule,
     AppRoutingModule,
@@ -155,7 +162,7 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
     DragDropModule,
     MatBadgeModule
   ],
-  providers: [ServerService],
+  providers: [authService, ProductService ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

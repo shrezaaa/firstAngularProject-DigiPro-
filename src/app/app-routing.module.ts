@@ -11,6 +11,7 @@ const appRoutes: Routes = [
     { path: 'home', component: ProductListComponent },
     { path: 'About-us', component: AboutUsComponent },
     { path: 'sign-in', component: SignInCustomerComponent },
+    { path: 'sign-up', component: SignUpCustomerComponent },
     { path: 'profile', component: ProfileComponent }
 
 ];
