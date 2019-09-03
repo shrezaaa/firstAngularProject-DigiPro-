@@ -1,9 +1,11 @@
+import * as firebase from 'firebase';
+
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http'
 import { Customer } from 'src/Shared/customer.model';
 
 @Injectable()
-export class ServerService {
+export class authService {
 
     constructor(private http: Http){
     }
@@ -13,6 +15,10 @@ export class ServerService {
     ];
 
     onRegister(cust : Customer){
-        this.customers.push(cust);
+        console.log(cust.email);
+        firebase.auth().createUserWithEmailAndPassword(cust.email , cust.password)
+            .catch(
+                error => console.log(error)
+            )
     }
 }
