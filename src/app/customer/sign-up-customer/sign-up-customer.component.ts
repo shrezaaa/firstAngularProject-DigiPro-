@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ServerService } from 'src/app/server.service';
+import { authService } from 'src/app/Auth.service';
 import { Customer } from 'src/Shared/customer.model';
 
 @Component({
@@ -14,13 +14,13 @@ export class SignUpCustomerComponent implements OnInit {
 
   Message : string;
 
-  constructor(private srvService: ServerService ) { }
+  constructor(private srvService: authService ) { }
 
   ngOnInit() {
     this.signUpForm = new FormGroup({
       'fname': new FormControl(null, Validators.required),
       'lname': new FormControl(null, Validators.required),
-      'username': new FormControl(null , Validators.required),
+      'email': new FormControl(null , Validators.required),
       'password': new FormControl(null , Validators.required)
     })
   }
@@ -30,11 +30,13 @@ export class SignUpCustomerComponent implements OnInit {
   }
 
   onsubmit(){
-    let customer = new Customer(this.signUpForm.get('fname').value,this.signUpForm.get('lname').value,this.signUpForm.get('username').value,
+    let customer = new Customer(this.signUpForm.get('fname').value,this.signUpForm.get('lname').value,this.signUpForm.get('email').value,
     this.signUpForm.get('password').value,[],[],false);
   
     if(this.signUpForm.status === 'VALID')
-      {
+      {       
+      console.log(customer.email);
+       
         this.srvService.onRegister(customer);
         this.Message = 'Sign Up Successfully ...!  >_-';
       }else{
