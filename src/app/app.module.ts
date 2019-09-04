@@ -5,18 +5,17 @@ import {MatButtonModule} from '@angular/material/button';
 import { AngularFireModule } from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database'
 
+import { HFModule } from './HF/HF.module';
 import { CdkTableModule } from "@angular/cdk/table";
 import { BidiModule } from "@angular/cdk/bidi";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ProductService } from './product.service';
-import { AuthModule } from './customer/Auth.module';
+import { AuthModule } from './Authentication/Auth.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { CustomerComponent } from './customer/customer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { FooterComponent } from './footer/footer.component';
 import { authService } from './Auth.service';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -58,20 +57,17 @@ import {
   MatBadgeModule
 } from "@angular/material";
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     CustomerComponent,
     ProductListComponent,
     AboutUsComponent,
-    FooterComponent,
     ProfileComponent,
 
   ],
   imports: [
+    HFModule,
     AuthModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -157,7 +153,7 @@ import {
     DragDropModule,
     MatBadgeModule
   ],
-  providers: [authService, ProductService ],
+  providers: [authService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
