@@ -3,13 +3,15 @@
     <div class="fadeIn first">
       <img src="assets/finger.png" id="icon" alt="User Icon">
     </div>
-    <div>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
-    </div>
+    <form [formGroup]="SignInForm" (ngSubmit)="onLogin()">
+      <div>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email" formControlName="email">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password" formControlName="password">
+        <input type="submit" class="fadeIn fourth" value="Log In" >
+      </div>
+    </form>
     <div id="formFooter">
-      <a class="underlineHover" routerLink = "/sign-up">Create new Account</a>
+      <a class="underlineHover" routerLink="/sign-up">Create new Account</a>
     </div>
   </div>
 </div>

@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './customer/profile/profile.component';
 import { environment } from '../environments/environment'
 import { SharedModule } from 'src/Shared/shared.module';
+import { CustomerService } from './customer.service';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { SharedModule } from 'src/Shared/shared.module';
   exports: [
 
   ],
-  providers: [authService, ProductService],
+  providers: [authService, ProductService , CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
