@@ -12,6 +12,8 @@ export class SignUpCustomerComponent implements OnInit {
 
   signUpForm : FormGroup;
 
+  cust = [];
+
   Message : string;
 
   constructor(private srvService: authService ) { }
@@ -37,8 +39,14 @@ export class SignUpCustomerComponent implements OnInit {
       {       
       console.log(customer.email);
        
-        this.srvService.onRegister(customer);
+        this.cust.push(customer);
+
+        this.srvService.onRegister(this.cust , customer).subscribe(
+          (response) => console.log(response),
+          (error)=> console.log(error)   
+        )
         this.Message = 'Sign Up Successfully ...!  >_-';
+        this.cust = [];
       }else{
         this.Message = 'Fill out all of the inputs ...!'
       }

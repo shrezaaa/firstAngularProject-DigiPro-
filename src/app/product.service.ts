@@ -8,7 +8,5 @@ export class ProductService{
 
     }
 
-    getProduct(indexes : number[]){
-        
-    }
+    
 }
