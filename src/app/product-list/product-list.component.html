@@ -6,16 +6,22 @@
             <span>{{ product.name }}</span>
         </a>
         <div class="text-right">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                <a  class="fa fa-star checked" href="#"></a>
-                <a  class="fa fa-star checked" href="#"></a>
-                <a  class="fa fa-star checked" href="#"></a>
-                <a  class="fa fa-star checked" href="#"></a>
-                <a  class="fa fa-star checked" href="#"></a>
+            <div [class]="'rate'" >
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text">1 star</label>
+            </div>
             <a><img id="cartPlus" src="assets\cart-plus.png"></a>
         </div>
-        <br>
-        <div class="text-left">
+        <hr>
+        <div class="text-left"  >
             <span id="ProPrice">{{ product.price }} <span id="Price">$</span></span>
         </div>
     </div>
