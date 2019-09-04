@@ -4,6 +4,7 @@ import { SignUpCustomerComponent } from './sign-up-customer/sign-up-customer.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing.module';
+import { SharedModule } from 'src/Shared/shared.module';
 
 @NgModule({
     declarations : [
@@ -11,7 +12,7 @@ import { AppRoutingModule } from '../app-routing.module';
         SignUpCustomerComponent
     ] , 
     imports:[
-
+        SharedModule,
          ReactiveFormsModule,
          CommonModule,
          AppRoutingModule

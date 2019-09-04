@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CustomerComponent } from './customer.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SharedModule } from 'src/Shared/shared.module';
 
 @NgModule({
     declarations:[
@@ -8,7 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
         ProfileComponent
     ],
     imports: [
-
+        SharedModule
     ]
 })
 

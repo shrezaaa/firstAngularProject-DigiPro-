@@ -1,14 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ReactiveFormsModule} from "@angular/forms";
-import {MatButtonModule} from '@angular/material/button';
 import { AngularFireModule } from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database'
-
 import { HFModule } from './HF/HF.module';
-import { CdkTableModule } from "@angular/cdk/table";
-import { BidiModule } from "@angular/cdk/bidi";
-import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ProductService } from './product.service';
 import { AuthModule } from './Authentication/Auth.module';
 import { AppComponent } from './app.component';
@@ -21,41 +16,8 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './customer/profile/profile.component';
 import { environment } from '../environments/environment'
-import {
-  MatTreeModule,
-  MatAutocompleteModule,
-  MatButtonToggleModule,
-  MatCheckboxModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatCardModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatExpansionModule,
-  MatFormFieldModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatTableModule,
-  MatTabsModule,
-  MatStepperModule,
-  MatBadgeModule
-} from "@angular/material";
+import { SharedModule } from 'src/Shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -67,6 +29,7 @@ import {
 
   ],
   imports: [
+    SharedModule,
     HFModule,
     AuthModule,
     AngularFireDatabaseModule,
@@ -76,82 +39,10 @@ import {
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    BidiModule,
-    MatTreeModule,
-    MatAutocompleteModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatExpansionModule,
-    MatFormFieldModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatStepperModule,
-    MatSortModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    CdkTableModule,
-    DragDropModule,
-    MatBadgeModule
 
-    
   ],
   exports: [
-    BidiModule,
-    MatTreeModule,
-    MatAutocompleteModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatExpansionModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatStepperModule,
-    MatSortModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    CdkTableModule,
-    DragDropModule,
-    MatBadgeModule
+
   ],
   providers: [authService, ProductService],
   bootstrap: [AppComponent]
