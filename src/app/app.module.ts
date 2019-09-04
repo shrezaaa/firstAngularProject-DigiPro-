@@ -61,6 +61,7 @@ import { BidiModule } from "@angular/cdk/bidi";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ProductService } from './product.service';
 import { from } from 'rxjs';
+import { AuthModule } from './customer/Auth.module';
 
 
 
@@ -72,12 +73,11 @@ import { from } from 'rxjs';
     ProductListComponent,
     AboutUsComponent,
     FooterComponent,
-    SignUpCustomerComponent,
-    SignInCustomerComponent,
     ProfileComponent,
 
   ],
   imports: [
+    AuthModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
     HttpModule,
