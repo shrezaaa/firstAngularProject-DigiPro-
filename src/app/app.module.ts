@@ -18,15 +18,14 @@ import { ProfileComponent } from './customer/profile/profile.component';
 import { environment } from '../environments/environment'
 import { SharedModule } from 'src/Shared/shared.module';
 import { CustomerService } from './customer.service';
+import { CustomerModule } from './customer/customer.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerComponent,
     ProductListComponent,
     AboutUsComponent,
-    ProfileComponent,
 
   ],
   imports: [
@@ -40,6 +39,7 @@ import { CustomerService } from './customer.service';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    CustomerModule
 
   ],
   exports: [

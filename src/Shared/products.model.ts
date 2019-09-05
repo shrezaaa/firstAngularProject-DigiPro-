@@ -3,7 +3,7 @@ export class Product{
     public imgUrl: string ;
     public description: string;
     public comment: string[];
-    public price: number;
+    public price: any;
     public id : number;
 
     constructor(Name : string , ImgUrl : string , Description: string , Comment: string[] , Price : number ,ID : number){

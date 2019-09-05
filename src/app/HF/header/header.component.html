@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-    <a class="navbar-brand" href="#"><img src="assets/Store.jpeg" id="storeImg"></a>
+<nav class="navbar navbar-expand-lg navbar-light  text-warning" id="navbar">
+    <a class="navbar-brand" href="#"><img src="assets/Store.png" id="storeImg"></a>
 
     <div class="collapse navbar-collapse center" id="mainNavBar">
         <ul class="navbar-nav mr-auto align-items-center">
@@ -7,25 +7,28 @@
                 <a class="nav-link" href="#"><img src="assets/download.png" id="cartImg"></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" routerLink="/home" id="home">Home </a>
+                <a class="nav-link text-warning" routerLink="/home" id="home">Home </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#" id="profile" routerLink="/profile">Profile </a>
+                <a class="nav-link text-warning" href="#" id="profile" routerLink="/profile">Profile </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" routerLink="/About-us" id="about">About us</a>
+                <a class="nav-link text-warning" routerLink="/About-us" id="about">About us</a>
             </li>
         </ul>
 
         <ul class="navbar-nav mr-auto align-items-center">
-            <img src="assets/eagle.png" id="eagleImg">
-            <p>digi Product</p>
-            <img src="assets/eagle.png" id="eagleImg">
+            <img src="assets/shopping-bag.png" id="eagleImg">
+            <p>Digi Product</p>
+            <img src="assets/shopping-bag.png" id="eagleImg">
         </ul>
-        <a class="nav-link active" id="signINUP" routerLink="/sign-in"><span>SignUp/SignIn</span></a>
+        <a class="nav-link active text-warning" id="signINUP" routerLink="/sign-in" *ngIf="!signedIn(); else mmd"><span>SignUp/SignIn</span></a>
+        <ng-template #mmd>
+            <a class="nav-link active text-warning" id="signINUP" (click)="onLogOut()" id="mmdLink"><span>logout</span></a>
+        </ng-template>
         <div class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success  my-2 my-sm-0" type="button">Search</button>
+            <button class="btn btn-success  my-2 my-sm-0" type="button">Search</button>
         </div>
     </div>
 </nav>
