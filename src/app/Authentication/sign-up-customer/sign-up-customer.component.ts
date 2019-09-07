@@ -43,7 +43,7 @@ export class SignUpCustomerComponent implements OnInit {
 
         this.srvService.onRegister(this.cust , customer).subscribe(
           (response) => console.log(response),
-          (error)=> console.log(error)   
+          (error) => console.log(error)   
         )
         this.Message = 'Sign Up Successfully ...!  >_-';
         this.cust = [];
